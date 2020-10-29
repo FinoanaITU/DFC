@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PhotoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,4 +18,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/',['WelcomeController::class','index'])->name('welocome');
+//Route::get('/','WelcomeController@index')->name('welcome');
+
+Route::get('photo',[PhotoController::class, 'create']);
+Route::post('photo', [PhotoController::class, 'store']);
