@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PhotoController;
+use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,3 +28,10 @@ Route::post('photo', [PhotoController::class, 'store']);
 
 Route::get('contact', [ContactController::class, 'create']);
 Route::post('contact', [ContactController::class, 'store']);
+
+Route::get('users',[UsersController::class, 'create']);
+Route::post('users',[UsersController::class, 'store']);
+
+
+//Get
+Route::get('login',[LoginController::class,'create']);
