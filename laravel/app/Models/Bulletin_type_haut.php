@@ -5,12 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Salaries extends Model
+class Bulletin_type_haut extends Model
 {
     use HasFactory;
 
-    public function societe()
+    public function bulletin_paie()
     {
-        return $this->belongsTo(Societe::class);
+        return $this->belongsToMany(Bulletin_paie::class);
     }
 }

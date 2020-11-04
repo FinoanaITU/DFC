@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Bulettin_type_haut extends Model
+class Bulletin_bas extends Model
 {
     use HasFactory;
 }

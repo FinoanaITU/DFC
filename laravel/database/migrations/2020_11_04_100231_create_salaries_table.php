@@ -13,7 +13,7 @@ class CreateSalariesTable extends Migration
      */
     public function up()
     {
-        Schema::disableForeignKeyConstraints();
+        // Schema::disableForeignKeyConstraints();
         Schema::create('salaries', function (Blueprint $table) {
             $table->id();
             $table->string('nom');
@@ -24,10 +24,10 @@ class CreateSalariesTable extends Migration
             $table->timestamps();
 
             //foreign key
-            $table->unsignedBigInteger('Societe_id');
-            $table->foreign('Societe_id')
+            $table->unsignedBigInteger('societe_id');
+            $table->foreign('societe_id')
                 ->references('id')
-                ->on('Societe')
+                ->on('societes')
                 ->onDelete('cascade');
         });
     }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBulettinTypeHautsTable extends Migration
+class CreateBulletinTypeBasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateBulettinTypeHautsTable extends Migration
      */
     public function up()
     {
-        Schema::create('bulettin_type_hauts', function (Blueprint $table) {
+        Schema::create('bulletin_type_bas', function (Blueprint $table) {
             $table->id();
             $table->string('libelle')->require;
             $table->string('type_valeur')->require;
@@ -29,6 +29,6 @@ class CreateBulettinTypeHautsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('bulettin_type_hauts');
+        Schema::dropIfExists('bulettin_type_bas');
     }
 }

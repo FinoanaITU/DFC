@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUsersTable extends Migration
+class CreateBulletinPaiesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,22 +14,23 @@ class CreateUsersTable extends Migration
     public function up()
     {
         Schema::disableForeignKeyConstraints();
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('bulletin_paie', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
+            $table->string('valeur');
             $table->timestamps();
 
-            //
+            //foreign key
+            //Societe
             $table->unsignedBigInteger('societe_id');
             $table->foreign('societe_id')
                 ->references('id')
-                ->on('societes')
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
+                ->on('societes');
+
+            //Societe
+            $table->unsignedBigInteger('parametre_id');
+            $table->foreign('parametre_id')
+                ->references('id')
+                ->on('parametres');
         });
     }
 
@@ -40,6 +41,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('bulettin_paies');
     }
 }
