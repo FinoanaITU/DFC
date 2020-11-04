@@ -34,4 +34,8 @@ Route::post('users',[UsersController::class, 'store']);
 
 
 //Get
-Route::get('login',[LoginController::class,'create']);
+//Route::get('login',[LoginController::class,'create']);
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
