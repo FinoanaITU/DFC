@@ -98,7 +98,7 @@
                         Login
                     </button>
                 </div>
-
+                {{-- <div id="example"></div> --}}
                 <div class="text-center p-t-90">
                     @if (Route::has('password.request'))
                         <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
@@ -123,4 +123,5 @@
     <script src="{{asset('vendor/daterangepicker/daterangepicker.js')}}"></script>
     <script src="{{asset('vendor/countdowntime/countdowntime.js')}}"></script>
     <script src="{{asset('js/main.js')}}"></script>
+    <script type ="text/javascript" src="js/app.js"></script>
 @endsection
